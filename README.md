@@ -33,11 +33,14 @@ The room simulation and training/evaluation pipeline are adapted from [Neural Ge
 ## Citation
 
 ```bibtex
-@inproceedings{kim2025iceic,
-  title={Robust Sound Source Localization Using CDR-Based Masking and CNN-Enhanced GCC-PHAT in Reverberant Environments},
+@INPROCEEDINGS{10879682,
   author={Kim, Eojin and Kim, Juseong and Choi, Jungyu and Kim, Joonwhi and Im, Sungbin},
-  booktitle={2025 International Conference on Electronics, Information, and Communication (ICEIC)},
+  booktitle={2025 International Conference on Electronics, Information, and Communication (ICEIC)}, 
+  title={Robust Sound Source Localization Using CDR-Based Masking and CNN-Enhanced GCC-PRAT in Reverberant Environments}, 
   year={2025},
-  doi={10.1109/ICEIC64972.2025.10879682}
-}
+  volume={},
+  number={},
+  pages={1-4},
+  keywords={Deep learning;Time difference of arrival;Neural networks;Estimation;Robustness;Reverberation;Convolutional neural networks;Noise measurement;Signal to noise ratio;Microphones;Sound source localization;Coherent-to-Diffuse Ratio (CDR);Generalized Cross-Correlation with Phase Trans-form (GCC-PHAT);Time Difference of Arrival (TDOA);Convo-lutional Neural Network (CNN);reverberation suppression;noise suppression},
+  doi={10.1109/ICEIC64972.2025.10879682}}
 ```
