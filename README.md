@@ -1,8 +1,43 @@
-# ICEIC 2025
-International Conference on Electronics, Information, and Communication (ICEIC) 2025
-JAN. 19(SUN) – 22(WED), 2025 / Osaka International House, Japan
+# Robust Sound Source Localization Using CDR-Based Masking and CNN-Enhanced GCC-PHAT in Reverberant Environments
 
-# ABSTRACT
-This paper proposes a novel sound source localization method that combines Coherent-to-Diffuse Ratio (CDR) estimation with Generalized Cross-Correlation with Phase Transform (GCC-PHAT) to improve Time Difference of Arrival (TDOA) estimation in reverberant and noisy environments. First, a binary diffuseness mask derived from CDR estimation is applied to suppress the effects of reverberation and noise. Then, the GCC-PHAT algorithm is used to calculate the crosscorrelation between signals from two microphones, followed by a Convolutional Neural Network (CNN) structure adopted from the PGCC paper to refine the TDOA estimation. The proposed method demonstrates superior performance in complex acoustic environments compared to the conventional GCC-PHAT. Experimental results using simulated data show that, in a challenging environment with T60 of 0.6 seconds and a very low SNR of 0 dB, the Mean Absolute Error (MAE) decreased from 1.40 cm with the conventional GCC-PHAT method to 0.94 cm with the proposed method.
+**Eojin Kim, Juseong Kim, Jungyu Choi, Joonwhi Kim, Sungbin Im** | Soongsil University | ICEIC 2025
 
-![image](https://github.com/user-attachments/assets/49b1d4fa-6c31-4681-9e5e-6d7227729d2c)
+[Paper](https://doi.org/10.1109/ICEIC64972.2025.10879682) | [Code](https://github.com/eojinnn/ICEIC-2025) | [Research Portfolio](https://github.com/eojinnn/Research-portfolio)
+
+Research code combining CDR-based diffuseness masking, GCC-PHAT, and CNN regression for TDOA estimation.
+
+![Proposed framework](https://github.com/user-attachments/assets/49b1d4fa-6c31-4681-9e5e-6d7227729d2c)
+
+## Environment
+
+Python with PyTorch, torchaudio, NumPy, librosa, Pyroomacoustics, scikit-learn, torchinfo and tqdm. Exact versions are not pinned.
+
+## Data Preparation
+
+Set the audio path in `data.py` (`LibriSpeechLocations.source_file`) and room/model settings in `cfg.py`.
+
+## Training and Evaluation
+
+The experiment driver is `main.py`; the proposed masking/CNN implementation is in `model.py`.
+
+```bash
+python main.py --exp_name my_experiment
+```
+
+**Note:** The checked-in `main.py` forces `args.evaluate = True`. For training, change this to `False`; evaluation requires a matching checkpoint at `experiments/my_experiment/model.pth`. This is research code, not a clean-environment verified release.
+
+## Acknowledgements
+
+The room simulation and training/evaluation pipeline are adapted from [Neural Generalized Cross Correlations (NGCC)](https://github.com/axeber01/ngcc). Its original [MIT license notice](LICENSES/NGCC-MIT.txt) is retained.
+
+## Citation
+
+```bibtex
+@inproceedings{kim2025iceic,
+  title={Robust Sound Source Localization Using CDR-Based Masking and CNN-Enhanced GCC-PHAT in Reverberant Environments},
+  author={Kim, Eojin and Kim, Juseong and Choi, Jungyu and Kim, Joonwhi and Im, Sungbin},
+  booktitle={2025 International Conference on Electronics, Information, and Communication (ICEIC)},
+  year={2025},
+  doi={10.1109/ICEIC64972.2025.10879682}
+}
+```
